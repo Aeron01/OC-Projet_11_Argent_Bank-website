@@ -5,7 +5,7 @@ function Error() {
         <main>
             <section className="error">
                 <h1>404</h1>
-                <p>La Page n'existe pas !</p>
+                <p>Page not found</p>
             </section>
         </main>
     )

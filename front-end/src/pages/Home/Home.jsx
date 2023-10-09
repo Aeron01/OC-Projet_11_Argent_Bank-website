@@ -8,6 +8,7 @@ function Home() {
             <section className="hero">
                 <article className="hero-content">
                 <h1 className="sr-only">Promoted Content</h1>
+                <br></br>
                 <p className="subtitle">No fees.</p>
                 <p className="subtitle">No minimum deposit.</p>
                 <p className="subtitle">High interest rates.</p>
