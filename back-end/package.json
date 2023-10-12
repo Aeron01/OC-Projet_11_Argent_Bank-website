@@ -22,7 +22,8 @@
     "dev:server": "nodemon ./server/server.js",
     "populate-db": "node ./server/scripts/populateDatabase.js",
     "server": "node ./server/server.js",
-    "mongod": "sudo systemctl start mongod"
+    "mongodb": "sudo systemctl start mongod",
+    "stop-mongodb": "sudo systemctl stop mongod"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
