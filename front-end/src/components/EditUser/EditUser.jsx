@@ -6,9 +6,9 @@ function EditUser() {
     // const dispatch = useDispatch();
 
     // const token = useSelector((state) => state.auth.token);
-    const user = useSelector((state) => state.name.username);
-    const firstname = useSelector((state) => state.name.firstname);
-    const lastname = useSelector((state) => state.name.lastname);
+    const user = useSelector((state) => state.auth.username);
+    const firstname = useSelector((state) => state.auth.firstname);
+    const lastname = useSelector((state) => state.auth.lastname);
 
     const [showForm, setShowForm] = useState(false);
     const [newUsername, setNewUsername] = useState('');
