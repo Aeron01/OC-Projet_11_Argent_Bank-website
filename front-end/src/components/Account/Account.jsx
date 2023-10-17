@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { setUsername, logout } from "../../Redux/auth.slice";
 
 function Account() {
@@ -9,18 +9,20 @@ function Account() {
 
     const token = useSelector((state) => state.auth.token); // Recovering the token in redux
     console.log("debug recup state du token :" + token);
-    const username = useSelector((state) => state.auth.username); // Retrieving username in redux
-    console.log("debug recup state de l'username :" + username);
-    //const firstname = useSelector((state) => state.auth.firstname);
-    //const lastname = useSelector((state) => state.auth.lastname);
-    
+    const username = useSelector((state) => state.auth.userName); // Retrieving username in redux
+    //console.log("debug recup state de l'username :" + username);
+    //const firstname = useSelector((state) => state.auth.firstName);
+    //const lastname = useSelector((state) => state.auth.lastName);
+    const [loading, setLoading] = useState(false);
+    const [authenticated, setAuthenticated] = useState(!!username);
 
     const handleLogout = () => {
         dispatch(logout());  // Register the token in the store
     };
 
     useEffect(() => {
-        if(token) {
+        if(token && !username) {
+            setLoading(true);
             const fetchData = async () => {
                 try {
                     const response = await fetch('http://localhost:3001/api/v1/user/profile', {
@@ -36,10 +38,11 @@ function Account() {
                         console.log(data);
 
                         dispatch(setUsername({ // Saving data in the store
-                            username: data.body.username,
-                            //firstname: data.body.firstname,
-                            //lastname: data.body.lastname,
+                            userName: data.body.userName,
+                            //firstName: data.body.firstName,
+                            //lastName: data.body.lastName,
                          }));
+                        setAuthenticated(true);
                     } else {
                         console.log("Error retrieving user profile");
                     }
@@ -51,12 +54,15 @@ function Account() {
             fetchData();
         }
         
-    }, [dispatch, token]);
+    }, [dispatch, token, username]);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
 
     return (
         <>
-        {console.log('username : '+username)}
-            {username ? (
+            {authenticated ? (
                 <div className="cont-user">
                     <button className="btn-user" onClick={handleLogout}>Logout</button>
                     <NavLink className="btn-user" to="/user">
