@@ -14,7 +14,7 @@ function Router() {
         <div className="container">
             <Header />
             <Routes>
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/login" element={<SignIn />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/user" element={<User />} />

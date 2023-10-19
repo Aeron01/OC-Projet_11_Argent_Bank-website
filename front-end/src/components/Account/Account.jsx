@@ -14,15 +14,19 @@ function Account() {
     //console.log("debug recup state de l'username :" + username);
     //const firstname = useSelector((state) => state.auth.firstName);
     //const lastname = useSelector((state) => state.auth.lastName);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [authenticated, setAuthenticated] = useState(!!username);
 
     const handleLogout = () => {
         dispatch(logout());  // Deleting the token from the store
-        navigate("/home")
+        navigate("/")
     };
 
     useEffect(() => {
+        console.log("Token: ", token);
+        console.log("Username: ", username);
+        console.log("Loading: ", loading);
+        console.log("Autenticated: ", authenticated);
         if(token) {
             setLoading(true);
             const fetchData = async () => {
@@ -58,7 +62,7 @@ function Account() {
             fetchData();
         }
         
-    }, [dispatch, token, username]);
+    }, [authenticated, dispatch, loading, token, username]);
 
     useEffect(() => {
         if(!token) {
@@ -73,7 +77,7 @@ function Account() {
                     <div className="cont-user">
                         <button className="btn-user" onClick={handleLogout}>Logout</button>
                         <NavLink className="btn-user" to="/user">
-                            <i className="fas f-user-circle"></i>
+                            <i className="fas fa-user-circle"></i>
                             <p>{username}</p>
                         </NavLink>
                     </div>
