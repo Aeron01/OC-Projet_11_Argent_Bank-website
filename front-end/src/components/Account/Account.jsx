@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { setUsername, logout } from "../../Redux/auth.slice";
@@ -6,6 +6,7 @@ import { setUsername, logout } from "../../Redux/auth.slice";
 function Account() {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const token = useSelector((state) => state.auth.token); // Recovering the token in redux
     console.log("debug recup state du token :" + token);
@@ -13,15 +14,16 @@ function Account() {
     //console.log("debug recup state de l'username :" + username);
     //const firstname = useSelector((state) => state.auth.firstName);
     //const lastname = useSelector((state) => state.auth.lastName);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [authenticated, setAuthenticated] = useState(!!username);
 
     const handleLogout = () => {
-        dispatch(logout());  // Register the token in the store
+        dispatch(logout());  // Deleting the token from the store
+        navigate("/home")
     };
 
     useEffect(() => {
-        if(token && !username) {
+        if(token) {
             setLoading(true);
             const fetchData = async () => {
                 try {
@@ -46,8 +48,10 @@ function Account() {
                     } else {
                         console.log("Error retrieving user profile");
                     }
+                    setLoading(false);
                 } catch (error) {
                     console.log("Error retrieving user profile");
+                    setLoading(false);
                 }
             };
 
@@ -56,29 +60,33 @@ function Account() {
         
     }, [dispatch, token, username]);
 
-    if (loading) {
-        return <p>Loading...</p>;
-    }
+    useEffect(() => {
+        if(!token) {
+            setAuthenticated(false);
+        }
+    }, [token]);
 
     return (
         <>
-            {authenticated ? (
-                <div className="cont-user">
-                    <button className="btn-user" onClick={handleLogout}>Logout</button>
-                    <NavLink className="btn-user" to="/user">
-                        <i className="fas f-user-circle"></i>
-                        <p>{username}</p>
-                    </NavLink>
-                </div>
-            ) : (
-                <div className="cont-user">
-                    <NavLink className="btn-user" to="/login">
-                        <p>Sign In</p>
-                    </NavLink>
-                    <NavLink className="btn-user" to="/register">
-                        <p>Sign Up</p>
-                    </NavLink>
-                </div>
+            {loading ? (<p>Loading...</p>):(
+                authenticated ? (
+                    <div className="cont-user">
+                        <button className="btn-user" onClick={handleLogout}>Logout</button>
+                        <NavLink className="btn-user" to="/user">
+                            <i className="fas f-user-circle"></i>
+                            <p>{username}</p>
+                        </NavLink>
+                    </div>
+                ) : (
+                    <div className="cont-user">
+                        <NavLink className="btn-user" to="/login">
+                            <p>Sign In</p>
+                        </NavLink>
+                        <NavLink className="btn-user" to="/register">
+                            <p>Sign Up</p>
+                        </NavLink>
+                    </div>
+                )
             )}
         </>
     )
