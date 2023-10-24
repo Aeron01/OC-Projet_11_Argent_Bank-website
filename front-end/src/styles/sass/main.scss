@@ -8,5 +8,23 @@
 @import './pages/_signin';
 @import './pages/_signup';
 @import './pages/_user';
+@import './pages/_account';
+
+.contenair {
+    max-width: 1300px;
+    min-height: 93vh;
+    margin: 0 auto;
+
+    @media (min-with: 920px) {
+        width: 90%;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -mos-osx-font-smoothing: grayscale;
+}
 
 

@@ -1,0 +1,212 @@
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.cont-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 130px;
+  border-bottom: 1px solid #ccc;
+}
+@media (min-width: 920px) {
+  .cont-nav {
+    height: 125px;
+    flex-direction: row;
+    border-bottom: 1px solid #cccc00;
+  }
+}
+
+.logo-header {
+  height: 7vh;
+  margin: 10px 0 0 0;
+}
+
+.footer {
+  background: #00bc77;
+  color: #000;
+  padding: 40px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.error {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.error h1 {
+  font-size: 6rem;
+}
+@media (min-width: 920px) {
+  .error h1 {
+    font-size: 20rem;
+  }
+}
+.error p {
+  font-size: 1.6rem;
+}
+@media (min-width: 920px) {
+  .error p {
+    font-size: 2rem;
+  }
+}
+
+.banner {
+  background-image: url("../../assets/img/bank-tree.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100%;
+  position: relative;
+  background-position: 0 -50px;
+}
+@media (min-width: 920px) {
+  .banner {
+    border-radius: 25px;
+    background-position: 0;
+  }
+}
+.banner__content {
+  position: relative;
+  top: 2rem;
+  width: 200px;
+  background: white;
+  padding: 2rem;
+  text-align: left;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+@media (min-width: 920px) {
+  .banner__content {
+    position: absolute;
+    right: 50px;
+    width: 300px;
+    margin: 2rem;
+  }
+}
+@media (max-width: 920px) {
+  .banner__content {
+    display: none;
+  }
+}
+.banner__subtitle {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+}
+@media (min-width: 920px) {
+  .banner__subtitle {
+    font-size: 1.5rem;
+  }
+}
+.banner__text {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+@media (min-width: 920px) {
+  .banner__text {
+    font-size: 1.2rem;
+  }
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 920px) {
+  .feature {
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+}
+.feature__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem;
+}
+.feature__item-title {
+  color: #222;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0.5rem 0 1rem 0;
+  text-align: center;
+}
+.feature__item-text {
+  color: #222;
+  font-size: 1rem;
+  text-align: center;
+}
+.feature__icon {
+  width: 100px;
+  border: 10px solid #00bc77;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.cont-nav p,
+.cont-nav i {
+  margin: 0 3px;
+}
+.cont-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+@media (min-width: 920px) {
+  .cont-user {
+    margin-bottom: 0px;
+  }
+}
+
+.btn-user {
+  color: black;
+  display: flex;
+  text-decoration: none;
+  margin: 7px 15px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+.btn-user:hover {
+  background-color: #ccc;
+}
+.btn-user.active {
+  background-color: rgba(0, 188, 119, 0.7725490196);
+  cursor: default;
+}
+
+.contenair {
+  max-width: 1300px;
+  min-height: 93vh;
+  margin: 0 auto;
+}
+@media (min-with: 920px) {
+  .contenair {
+    width: 90%;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -mos-osx-font-smoothing: grayscale;
+}/*# sourceMappingURL=main.css.map */

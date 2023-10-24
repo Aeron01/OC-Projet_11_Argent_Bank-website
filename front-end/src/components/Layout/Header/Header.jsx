@@ -6,9 +6,9 @@ import Account from "../../Account/Account";
 function Header() {
     return (
         <header>
-            <nav className="main-nav">
+            <nav className="cont-nav">
                 <Link to="/">
-                    <img className="main-nav-logo-image" alt="Logo de Argent Bank" src={Logo}/>
+                    <img className="logo-header" alt="Logo de Argent Bank" src={Logo}/>
                 </Link>
 
                 <Account />

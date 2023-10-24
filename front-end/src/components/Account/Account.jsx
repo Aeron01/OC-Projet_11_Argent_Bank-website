@@ -9,7 +9,7 @@ function Account() {
     const navigate = useNavigate();
 
     const token = useSelector((state) => state.auth.token); // Recovering the token in redux
-    console.log("debug recup state du token :" + token);
+    // console.log("debug recup state du token :" + token);
     const username = useSelector((state) => state.auth.userName); // Retrieving username in redux
     //console.log("debug recup state de l'username :" + username);
     //const firstname = useSelector((state) => state.auth.firstName);
@@ -23,10 +23,10 @@ function Account() {
     };
 
     useEffect(() => {
-        console.log("Token: ", token);
-        console.log("Username: ", username);
-        console.log("Loading: ", loading);
-        console.log("Autenticated: ", authenticated);
+        // console.log("Token: ", token);
+        // console.log("Username: ", username);
+        // console.log("Loading: ", loading);
+        // console.log("Autenticated: ", authenticated);
         if(token) {
             setLoading(true);
             const fetchData = async () => {
