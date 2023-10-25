@@ -105,7 +105,7 @@ function Register() {
 
                     {error && <p className="register__error-message" >An error has occurred</p>}
 
-                    <button className="register-button" type="submit">Sign Up</button>
+                    <button className="register__button" type="submit">Sign Up</button>
 
                 </form>
             </section>

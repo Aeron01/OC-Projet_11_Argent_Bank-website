@@ -63,7 +63,7 @@ function SignIn() {
 
     return (
         <main>
-            <section className="sign-in-content">
+            <section className="sign-in">
                 <i className="fa fa-user-circle sign-in-icon"></i>
                 
                 <form onSubmit={handleSignIn}>
@@ -84,7 +84,7 @@ function SignIn() {
                         <label htmlFor="remember-me">Remember me</label>
                     </div>
                     
-                    <button className="sign-in-button" type="submit">Sign In</button>
+                    <button className="sign-in__button" type="submit">Sign In</button>
                 </form>
             </section>
         </main>

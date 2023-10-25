@@ -157,6 +157,75 @@
   padding: 1rem;
 }
 
+.sign-in, .register {
+  box-sizing: border-box;
+  background: white;
+  margin: 0 auto;
+  margin-top: 0rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sign-in__button, .register__button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  border-color: rgba(0, 188, 119, 0);
+  background: #00bc77;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.sign-in__button:hover, .register__button:hover {
+  scale: 1.02;
+}
+.sign-in__icon, .register__icon {
+  font-size: 5rem;
+  margin-bottom: 10px;
+}
+.sign-in__error-message, .register__error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+.sign-in__error-border, .register__error-border {
+  border: 1px solid red;
+}
+
+.register-cont {
+  display: flex;
+  column-gap: 0.6rem;
+}
+
+.input-remeber {
+  display: flex;
+}
+.input-remeber label {
+  margin-left: 0.3rem;
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.input-wrapper label {
+  font-weight: bold;
+}
+.input-wrapper input {
+  font-size: 1.2rem;
+  width: 97.5%;
+  height: 40px;
+  margin: 5px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 .cont-nav p,
 .cont-nav i {
   margin: 0 3px;
@@ -193,6 +262,93 @@
   cursor: default;
 }
 
+.account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  text-align: left;
+  margin-bottom: 2rem;
+  border-radius: 30px;
+}
+@media (min-width: 920px) {
+  .account {
+    padding: 2rem;
+  }
+}
+.account-amount {
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+@media (min-width: 920px) {
+  .account-amount {
+    font-size: 2.5rem;
+  }
+}
+.account-amount-description {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+@media (min-width: 920px) {
+  .account-amount-description {
+    font-size: 1rem;
+  }
+}
+.account-title {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+@media (min-width: 920px) {
+  .account-title {
+    font-size: 1rem;
+  }
+}
+.account-content-wrapper {
+  width: 100%;
+  flex: 1;
+}
+
+.transaction-button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-color: rgba(0, 188, 119, 0);
+  background: #00bc77;
+  padding: 9px 15px 9px 15px;
+  border-radius: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+@media (min-width: 920px) {
+  .transaction-button {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+}
+.transaction-button:hover {
+  scale: 1.05;
+}
+
+@media (min-width: 720px) {
+  .account {
+    flex-direction: row;
+  }
+  .account-content-wrapper.cta {
+    flex: 0;
+  }
+  .transaction-button {
+    width: 200px;
+  }
+}
 .contenair {
   max-width: 1300px;
   min-height: 93vh;

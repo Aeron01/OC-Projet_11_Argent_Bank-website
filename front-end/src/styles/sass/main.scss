@@ -5,10 +5,10 @@
 @import './layouts/_footer';
 @import './pages/_error';
 @import './pages/_home';
-@import './pages/_signin';
-@import './pages/_signup';
-@import './pages/_user';
-@import './pages/_account';
+@import './pages/_signin&register';
+@import './components/_account';
+@import './components/_transaction';
+@import './components/_editUser';
 
 .contenair {
     max-width: 1300px;
