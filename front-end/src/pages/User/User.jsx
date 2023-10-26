@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
 import Transactions from "../../components/Transactions/Transactions";
-// import EditUser from "../../components/EditUser/EditUser";
+import EditUser from "../../components/EditUser/EditUser";
 
 function User() {
     
@@ -20,7 +20,7 @@ function User() {
     return (
 
         <main className="main">
-            {/* <EditUser /> */}
+            <EditUser />
             <Transactions />
         </main>
     )

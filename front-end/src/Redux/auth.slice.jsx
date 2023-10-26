@@ -35,6 +35,7 @@ const authSlice = createSlice({
             state.userName = action.payload.userName;
             state.firstName = action.payload.firstName;
             state.lastName = action.payload.lastName;
+            // state.email = action.payload.email
         },
     },
 });

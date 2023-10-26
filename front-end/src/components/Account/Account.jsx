@@ -16,6 +16,7 @@ function Account() {
     //const lastname = useSelector((state) => state.auth.lastName);
     const [loading, setLoading] = useState(false);
     const [authenticated, setAuthenticated] = useState(!!username);
+    // const email = useSelector((state) => state.auth.email);
 
     const handleLogout = () => {
         dispatch(logout());  // Deleting the token from the store
@@ -27,6 +28,7 @@ function Account() {
         // console.log("Username: ", username);
         // console.log("Loading: ", loading);
         // console.log("Autenticated: ", authenticated);
+        // console.log("email: ", email)
         if(token) {
             setLoading(true);
             const fetchData = async () => {
@@ -47,6 +49,7 @@ function Account() {
                             userName: data.body.userName,
                             //firstName: data.body.firstName,
                             //lastName: data.body.lastName,
+                            //email: data.body.email,
                          }));
                         setAuthenticated(true);
                     } else {
@@ -62,7 +65,7 @@ function Account() {
             fetchData();
         }
         
-    }, [authenticated, dispatch, loading, token, username]);
+    }, [authenticated, dispatch, loading, token, username /*, email*/]);
 
     useEffect(() => {
         if(!token) {

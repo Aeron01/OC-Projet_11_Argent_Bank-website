@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux"; // rajouter useDispatch
+import { useSelector, useDispatch } from "react-redux";
+import { setUsername } from "../../Redux/auth.slice";
 
 function EditUser() {
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    // const token = useSelector((state) => state.auth.token);
-    const user = useSelector((state) => state.auth.username);
-    const firstname = useSelector((state) => state.auth.firstname);
-    const lastname = useSelector((state) => state.auth.lastname);
+    const token = useSelector((state) => state.auth.token);
+    const user = useSelector((state) => state.auth.userName);
+    const firstname = useSelector((state) => state.auth.firstName);
+    const lastname = useSelector((state) => state.auth.lastName);
+    // const email = useSelector((state) => state.auth.email);
 
     const [showForm, setShowForm] = useState(false);
     const [newUsername, setNewUsername] = useState('');
+    // const [newEmail, setNewEmail] = useState('');
 
     const toggleForm = () => {
         setShowForm(!showForm);
@@ -21,14 +24,52 @@ function EditUser() {
         setNewUsername(event.target.value);
     };
 
+    /*const handleInputEmailChange = (event => {
+        setNewEmail(event.target.value);
+    });*/
+    
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // rajouter la logique de l'envois des nouvelle info vers le back-end
-    }
+        
+        try {
+          const response = await fetch('http://localhost:3001/api/v1/user/profile', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({userName: newUsername /*, email: newEmail*/ }),
+          });
+
+          if (response.ok) {
+            console.log(response);
+            dispatch(setUsername({
+                type: 'SET_USER',
+                payload: {
+                    userName: newUsername,
+                    firstName: firstname,
+                    lastName: lastname,
+                    // email: newEmail,
+                },
+            }));
+
+          } else {
+            console.error('Error sending new username');
+          }
+
+        } catch (error){
+            console.error('Error during query', error);
+        }
+        setNewUsername('');
+        // setNewEmail('');
+        setShowForm(false);
+    };
 
     useEffect(() => {
         setNewUsername(user);
-    },[user]);
+        // setNewEmail(email);
+    },[user /*, email*/]);
 
     return (
         <>
@@ -51,8 +92,12 @@ function EditUser() {
                     <label>New Username:</label>
                     <input type="text" value={newUsername} onChange={handleInputChange} required />
 
-                    <button type="submit" className="transaction-button button">Confirm</button>
+                    {/* <label>New Email:</label>
+                    {console.log('Current Email: '+ email)}
+                    <p>Current Email: {email}</p>
+                    <input type="email" value={newEmail} onChange={handleInputEmailChange} required /> */}
 
+                    <button type="submit" className="transaction-button button">Confirm</button>
                 </form>
             )}
         </>

@@ -37,7 +37,7 @@ function Register() {
             password: password,
             firstName: firstName,
             lastName: lastName,
-            username: username
+            userName: username
         };
 
         fetch('http://localhost:3001/api/v1/user/signup', {
@@ -84,7 +84,7 @@ function Register() {
 
                         <div className="input-wrapper">
                             <label htmlFor="password">Password</label>
-                            <input className={error ? 'register__error-border' : ''} type="email" id="password" value={password} onChange={handlePasswordChange} required />
+                            <input className={error ? 'register__error-border' : ''} type="password" id="password" value={password} onChange={handlePasswordChange} required />
                         </div>
                     </div>
 
