@@ -13,6 +13,7 @@ function Transactions() {
 
             <div className="account-content-wrapper cta">
                 <button className="transaction-button">View transactions</button>
+                <i className="fas fa-chevron-right"></i>
             </div>
             </section>
 
@@ -25,6 +26,7 @@ function Transactions() {
 
             <div className="account-content-wrapper cta">
                 <button className="transaction-button">View transactions</button>
+                <i className="fas fa-chevron-right"></i>
             </div>
             </section>
 
@@ -37,6 +39,7 @@ function Transactions() {
 
             <div className="account-content-wrapper cta">
                 <button className="transaction-button">View transactions</button>
+                <i className="fas fa-chevron-right"></i>
             </div>
             </section>
         </>

@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setUsername } from "../../Redux/auth.slice";
 
+import '../../styles/sass/components/__editUser.scss';
+
 function EditUser() {
 
     const dispatch = useDispatch();
@@ -71,13 +73,17 @@ function EditUser() {
         // setNewEmail(email);
     },[user /*, email*/]);
 
+    const handleCancelClick = () => {
+        setShowForm(false);
+    }
+
     return (
         <>
             <section className="account-header">
                 <h1>Welcome back, {firstname} {lastname} !</h1>
 
                 {!showForm && (
-                    <button className="transaction-button button" onClick={toggleForm}>Edit your name</button>
+                    <button className="editUser-button button" onClick={toggleForm}>Edit your name</button>
                 )}
             </section>
 
@@ -96,8 +102,11 @@ function EditUser() {
                     {console.log('Current Email: '+ email)}
                     <p>Current Email: {email}</p>
                     <input type="email" value={newEmail} onChange={handleInputEmailChange} required /> */}
-
-                    <button type="submit" className="transaction-button button">Confirm</button>
+                    
+                    <div className="account-buttons">
+                        <button type="submit" className="editUser-button button">Save</button>
+                        <button type="button" className="editUser-button button" onClick={handleCancelClick}>Cancel</button>
+                    </div>
                 </form>
             )}
         </>

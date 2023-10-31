@@ -40,8 +40,8 @@ function Account() {
 
                         dispatch(setUsername({ // Saving data in the store
                             userName: data.body.userName,
-                            //firstName: data.body.firstName,
-                            //lastName: data.body.lastName,
+                            firstName: data.body.firstName,
+                            lastName: data.body.lastName,
                             //email: data.body.email,
                          }));
                         setAuthenticated(true);

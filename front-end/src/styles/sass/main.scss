@@ -8,14 +8,14 @@
 @import './pages/_signin&register';
 @import './components/_account';
 @import './components/_transaction';
-@import './components/_editUser';
+// @import './components/_editUser';
 
 .contenair {
     max-width: 1300px;
     min-height: 93vh;
     margin: 0 auto;
 
-    @media (min-with: 920px) {
+    @media (min-width: 920px) {
         width: 90%;
     }
 }

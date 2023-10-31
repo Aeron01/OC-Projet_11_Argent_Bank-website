@@ -45,4 +45,47 @@
             }
         }
     }
+
+    &-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        .button {
+            width: 50%;
+            border-radius: 5px;
+        }
+
+    }
+}
+
+.editUser-button {
+    width: 150px;
+    //display: flex;
+    //align-item: center;
+    // width: 50%;
+    padding: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-color: #00bc7700;
+    background: #00bc77;
+    color: white;
+
+    padding: 9px 15px 9px 15px;
+    border-radius: 20px;
+    margin-top: 15px;
+
+    @media (min-width: 920px) {
+        margin-top: 0;
+        font-size: 1.1rem;
+    }
+
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        scale: 1.05;
+    }
 }
