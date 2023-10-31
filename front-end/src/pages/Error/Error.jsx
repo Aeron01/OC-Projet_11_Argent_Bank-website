@@ -1,4 +1,3 @@
-// import "./error.scss" a définir dans le repertoire style
 
 function Error() {
     return (

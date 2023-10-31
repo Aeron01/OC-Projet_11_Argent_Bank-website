@@ -1,4 +1,3 @@
-// importer le style du footer ici
 
 function Footer() {
     return (

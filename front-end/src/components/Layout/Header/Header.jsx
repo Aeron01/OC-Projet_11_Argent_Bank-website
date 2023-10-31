@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/img/argentBankLogo.png"
 import Account from "../../Account/Account";
-// importer le style du footer ici
 
 function Header() {
     return (

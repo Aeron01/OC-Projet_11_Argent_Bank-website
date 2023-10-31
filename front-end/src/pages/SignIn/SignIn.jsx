@@ -8,7 +8,6 @@ import { login } from "../../Redux/auth.slice";
 function SignIn() {
     const dispatch = useDispatch();
     const token = useSelector(state => state.auth.token);
-    // console.log('initToken: '+token)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -55,7 +54,6 @@ function SignIn() {
     };
 
     useEffect(() => {
-        // console.log('token: '+token)
         if (token) {
             navigate("/user");
         }
