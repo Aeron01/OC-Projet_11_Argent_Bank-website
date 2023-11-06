@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setUsername } from "../../Redux/auth.slice";
 
-import '../../styles/sass/components/__editUser.scss';
 
 function EditUser() {
 
@@ -12,24 +11,26 @@ function EditUser() {
     const user = useSelector((state) => state.auth.userName);
     const firstname = useSelector((state) => state.auth.firstName);
     const lastname = useSelector((state) => state.auth.lastName);
-    // const email = useSelector((state) => state.auth.email);
 
+    
     const [showForm, setShowForm] = useState(false);
     const [newUsername, setNewUsername] = useState('');
-    // const [newEmail, setNewEmail] = useState('');
-
+    
     const toggleForm = () => {
         setShowForm(!showForm);
     };
-
+    
     const handleInputChange = (event) => {
         setNewUsername(event.target.value);
     };
-
-    /*const handleInputEmailChange = (event => {
-        setNewEmail(event.target.value);
-    });*/
     
+    /* in case it is necessary to modify the email following an entry error
+    const email = useSelector((state) => state.auth.email);
+    const [newEmail, setNewEmail] = useState('');
+    const handleInputEmailChange = (event => {
+        setNewEmail(event.target.value);
+    });
+    */
 
     const handleSubmit = async (event) => {
         event.preventDefault();

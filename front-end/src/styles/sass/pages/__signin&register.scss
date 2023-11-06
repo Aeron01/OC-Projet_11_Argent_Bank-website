@@ -1,5 +1,5 @@
 .sign-in, .register {
-    box-sizing: border-box; // faire une variable signin et signup de la ligne 2 a la ligne 10
+    box-sizing: border-box; // faire une mixin signin et signup de la ligne 2 a la ligne 10
     background: white;
     margin: 0 auto;
     margin-top: 0rem;
@@ -16,9 +16,9 @@
         font-size: 1.1rem;
         font-weight: bold;
         margin-top: 0.5rem;
-        border-color: #00bc7700;
-        background: #00bc77;
-        color: black;
+        border-color: var(--SecondaryColor);
+        background: var(--PrimaryColor);
+        color: var(--TextColor);
         border-radius: 10px;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
@@ -75,7 +75,7 @@
             width: 97.5%;
             height: 40px;
             margin: 5px 0 20px;
-            border: 1px solid #ccc;
+            border: 1px solid var(--BackAndBorderColor);
             border-radius: 5px;
         }
     }

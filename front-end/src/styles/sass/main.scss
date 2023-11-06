@@ -8,21 +8,21 @@
 @import './pages/_signin&register';
 @import './components/_account';
 @import './components/_transaction';
-// @import './components/_editUser';
+@import './components/_editUser';
 
 .contenair {
     max-width: 1300px;
     min-height: 93vh;
     margin: 0 auto;
 
-    @media (min-width: 920px) {
+    @media (min-width: $breakpointDesktop) {
         width: 90%;
     }
 }
 
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font_text);
     -webkit-font-smoothing: antialiased;
     -mos-osx-font-smoothing: grayscale;
 }

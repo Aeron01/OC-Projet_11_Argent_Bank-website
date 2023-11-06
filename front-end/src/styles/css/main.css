@@ -22,7 +22,7 @@
   align-items: center;
   flex-direction: column;
   height: 130px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--BackAndBorderColor);
 }
 @media (min-width: 920px) {
   .cont-nav {
@@ -38,8 +38,8 @@
 }
 
 .footer {
-  background: #00bc77;
-  color: #000;
+  background: var(--PrimaryColor);
+  color: var(--TextColor);
   padding: 40px;
   text-align: center;
   font-size: 17px;
@@ -160,7 +160,7 @@
 }
 .feature__icon {
   width: 100px;
-  border: 10px solid #00bc77;
+  border: 10px solid var(--PrimaryColor);
   border-radius: 50%;
   padding: 1rem;
 }
@@ -182,9 +182,9 @@
   font-size: 1.1rem;
   font-weight: bold;
   margin-top: 0.5rem;
-  border-color: rgba(0, 188, 119, 0);
-  background: #00bc77;
-  color: black;
+  border-color: var(--SecondaryColor);
+  background: var(--PrimaryColor);
+  color: var(--TextColor);
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -230,7 +230,7 @@
   width: 97.5%;
   height: 40px;
   margin: 5px 0 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--BackAndBorderColor);
   border-radius: 5px;
 }
 
@@ -251,19 +251,19 @@
 }
 
 .btn-user {
-  color: black;
+  color: var(--TextColor);
   display: flex;
   text-decoration: none;
   margin: 7px 15px;
   padding: 10px 15px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--BackAndBorderColor);
   border-radius: 5px;
   font-size: 1rem;
   background-color: #fff;
   cursor: pointer;
 }
 .btn-user:hover {
-  background-color: #ccc;
+  background-color: var(--BackAndBorderColor);
 }
 .btn-user.active {
   background-color: rgba(0, 188, 119, 0.7725490196);
@@ -274,7 +274,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid var(--TextColor);
   width: 80%;
   margin: 0 auto;
   flex-direction: column;
@@ -283,7 +283,7 @@
   text-align: left;
   margin-bottom: 2rem;
   border-radius: 10px;
-  background: #000;
+  background: var(--TextColor);
   color: white;
 }
 @media (min-width: 920px) {
@@ -331,8 +331,8 @@
   padding: 8px;
   font-size: 0.9rem;
   font-weight: bold;
-  border-color: rgba(0, 188, 119, 0);
-  background: #00bc77;
+  border-color: var(--SecondaryColor);
+  background: var(--PrimaryColor);
   padding: 9px 15px 9px 15px;
   border-radius: 20px;
   margin-top: 15px;
@@ -380,6 +380,88 @@
   scale: 1.5;
 }
 
+.button {
+  width: 40%;
+  margin: 5px 0 20px;
+}
+@media (min-width: 920px) {
+  .button {
+    width: 15%;
+  }
+}
+
+.account-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0 25px 0;
+}
+.account-header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+@media (min-width: 920px) {
+  .account-header h1 {
+    font-size: 2rem;
+  }
+}
+.account-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 45px 45px 45px;
+}
+.account-form input {
+  width: 80%;
+  height: 40px;
+  margin: 5px 0 20px;
+  padding: 0 10px;
+  border: 1px solid var(--BackAndBorderColor);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+@media (min-width: 920px) {
+  .account-form input {
+    width: 30%;
+  }
+}
+.account-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.account-buttons .button {
+  width: 50%;
+  border-radius: 5px;
+}
+
+.editUser-button {
+  width: 150px;
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-color: var(--SecondaryColor);
+  background: var(--PrimaryColor);
+  color: white;
+  padding: 9px 15px 9px 15px;
+  border-radius: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+@media (min-width: 920px) {
+  .editUser-button {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+}
+.editUser-button:hover {
+  scale: 1.05;
+}
+
 .contenair {
   max-width: 1300px;
   min-height: 93vh;
@@ -393,7 +475,7 @@
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font_text);
   -webkit-font-smoothing: antialiased;
   -mos-osx-font-smoothing: grayscale;
 }/*# sourceMappingURL=main.css.map */

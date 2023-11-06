@@ -13,26 +13,26 @@
         justify-content: center;
         margin-bottom: 40px;
 
-        @media (min-width: 920px) {
+        @media (min-width: $breakpointDesktop) {
             margin-bottom: 0px;
         }
     }
 }
 
 .btn-user {
-    color: black;
+    color: var(--TextColor);
     display: flex;
     text-decoration: none;
     margin: 7px 15px;
     padding: 10px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--BackAndBorderColor);
     border-radius: 5px;
     font-size: 1rem;
     background-color: #fff;
     cursor: pointer;
 
     &:hover {
-        background-color: #ccc;
+        background-color: var(--BackAndBorderColor);
     }
 
     &.active {

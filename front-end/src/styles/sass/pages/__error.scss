@@ -9,7 +9,7 @@
     h1 {
         font-size: 6rem;
 
-        @media (min-width: 920px) {
+        @media (min-width: $breakpointDesktop) {
             font-size: 20rem;
         }
     }
@@ -17,7 +17,7 @@
     p {
         font-size: 1.6rem;
 
-        @media (min-width: 920px) {
+        @media (min-width: $breakpointDesktop) {
             font-size: 2rem;
         }
     }

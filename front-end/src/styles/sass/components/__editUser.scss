@@ -2,7 +2,7 @@
     width: 40%;
     margin: 5px 0 20px;
 
-    @media (min-width: 920px) {
+    @media (min-width: $breakpointDesktop) {
         width: 15%;
     }
 }
@@ -19,7 +19,7 @@
             font-weight: bold;
             margin-bottom: 10px;
 
-            @media (min-width: 920px) {
+            @media (min-width: $breakpointDesktop) {
                 font-size: 2rem;
             }
         }
@@ -36,11 +36,11 @@
             height: 40px;
             margin: 5px 0 20px;
             padding: 0 10px;
-            border: 1px solid #ccc;
+            border: 1px solid var(--BackAndBorderColor);
             border-radius: 5px;
             font-size: 1rem;
 
-            @media (min-width: 920px) {
+            @media (min-width: $breakpointDesktop) {
                 width: 30%;
             }
         }
@@ -69,15 +69,15 @@
     padding: 8px;
     font-size: 0.9rem;
     font-weight: bold;
-    border-color: #00bc7700;
-    background: #00bc77;
+    border-color: var(--SecondaryColor);
+    background: var(--PrimaryColor);
     color: white;
 
     padding: 9px 15px 9px 15px;
     border-radius: 20px;
     margin-top: 15px;
 
-    @media (min-width: 920px) {
+    @media (min-width: $breakpointDesktop) {
         margin-top: 0;
         font-size: 1.1rem;
     }
