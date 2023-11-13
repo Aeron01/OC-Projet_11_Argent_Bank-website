@@ -1,0 +1,5 @@
+Resizing and compressing images :
+
+220,2 ko => 33,9 ko
+
+A total gain of 84.60 %

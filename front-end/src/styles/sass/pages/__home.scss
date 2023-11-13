@@ -1,5 +1,5 @@
 .banner {
-    background-image: url("../../assets/img/bank-tree.jpg");
+    background-image: url("../../assets/img/bank-tree.webp");
 
     background-size: cover;
     background-repeat: no-repeat;
@@ -56,11 +56,7 @@
 }
 
 .feature {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-
+    @include flex-col-center;
 
     @media (min-width: $breakpointDesktop) {
         flex-direction: row;
@@ -69,9 +65,9 @@
 
     &__item {
         flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+
+        @include flex-col-center;
+
         padding: 2.5rem;
 
         &-title {

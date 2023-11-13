@@ -1,8 +1,9 @@
+@import '../base/_mixin';
+
 .cont-nav {
-    display: flex;
+    @include flex-col-center;
+
     justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
 
     height: 130px;
     border-bottom: 1px solid var(--BackAndBorderColor);

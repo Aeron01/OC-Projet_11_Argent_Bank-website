@@ -18,9 +18,9 @@
 
 .cont-nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   height: 130px;
   border-bottom: 1px solid var(--BackAndBorderColor);
 }
@@ -49,9 +49,9 @@
 .error {
   height: 50vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 .error h1 {
   font-size: 6rem;
@@ -71,7 +71,7 @@
 }
 
 .banner {
-  background-image: url("../../assets/img/bank-tree.jpg");
+  background-image: url("../../assets/img/bank-tree.webp");
   background-size: cover;
   background-repeat: no-repeat;
   height: 50vh;
@@ -210,10 +210,10 @@
   column-gap: 0.6rem;
 }
 
-.input-remeber {
+.input-remember {
   display: flex;
 }
-.input-remeber label {
+.input-remember label {
   margin-left: 0.3rem;
 }
 .input-wrapper {
@@ -272,12 +272,12 @@
 
 .account {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid var(--TextColor);
   width: 80%;
   margin: 0 auto;
-  flex-direction: column;
   padding: 1.5rem;
   box-sizing: border-box;
   text-align: left;
