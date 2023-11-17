@@ -426,6 +426,9 @@
     width: 30%;
   }
 }
+.account-form p {
+  margin: 5px 0 20px;
+}
 .account-buttons {
   display: flex;
   flex-direction: row;

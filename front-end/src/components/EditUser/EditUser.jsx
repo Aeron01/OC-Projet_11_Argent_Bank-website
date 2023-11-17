@@ -11,6 +11,7 @@ function EditUser() {
     const user = useSelector((state) => state.auth.userName);
     const firstname = useSelector((state) => state.auth.firstName);
     const lastname = useSelector((state) => state.auth.lastName);
+    const email = useSelector((state) => state.auth.email);
 
     
     const [showForm, setShowForm] = useState(false);
@@ -25,7 +26,6 @@ function EditUser() {
     };
     
     /* in case it is necessary to modify the email following an entry error
-    const email = useSelector((state) => state.auth.email);
     const [newEmail, setNewEmail] = useState('');
     const handleInputEmailChange = (event => {
         setNewEmail(event.target.value);
@@ -72,7 +72,7 @@ function EditUser() {
     useEffect(() => {
         setNewUsername(user);
         // setNewEmail(email);
-    },[user /*, email*/]);
+    },[user , email]);
 
     const handleCancelClick = () => {
         setShowForm(false);
@@ -90,19 +90,19 @@ function EditUser() {
 
             {showForm && (
                 <form className="account-form" onSubmit={handleSubmit}>
-                    <label>First Name:</label>
-                    <input type="text" value={firstname} disabled />
+                    <label htmlFor='actualFirstname'>First Name:</label>
+                    <input type="text" id='actualFirstname' value={firstname} disabled />
 
-                    <label>Last Name:</label>
-                    <input type="text" value={lastname} disabled />
+                    <label htmlFor='actualLastname' >Last Name:</label>
+                    <input type="text" id='actualLastname' value={lastname} disabled />
 
-                    <label>New Username:</label>
-                    <input type="text" value={newUsername} onChange={handleInputChange} required />
+                    <p>Current Username: {user}</p>
+                    <label htmlFor='newUserName'>New Username:</label>
+                    <input type="text" id='newUserName' value={newUsername} onChange={handleInputChange} required />
 
-                    {/* <label>New Email:</label>
-                    {console.log('Current Email: '+ email)}
                     <p>Current Email: {email}</p>
-                    <input type="email" value={newEmail} onChange={handleInputEmailChange} required /> */}
+                    {/* <label htmlFor='NewEmail' >New Email:</label>
+                    <input type="email" id='NewEmail' value={newEmail} onChange={handleInputEmailChange} required /> */}
                     
                     <div className="account-buttons">
                         <button type="submit" className="editUser-button button">Save</button>
