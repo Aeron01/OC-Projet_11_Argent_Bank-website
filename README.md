@@ -111,15 +111,21 @@ mongo --version
 1. Ouvrez une fenêtre de terminal dans le projet cloné
 1. Exécutez les commandes suivantes :
 
-```terminal (dans le répertoire back-end)
+```terminal (dans le répertoire back-end et idem dans le répertoire front-end)
 # Installer les dépendances
 npm install
 
-# Démarrer le serveur de développement local
+# Démarrer la base de donnée MongoDB (dans le répertoire back-end)
+npm run mongodb
+
+# Démarrer le serveur de développement local (dans le répertoire back-end)
 npm run dev:server
 
-# Remplir la base de données avec deux utilisateurs
+# Remplir la base de données avec deux utilisateurs (dans le répertoire back-end)
 npm run populate-db
+
+# Arrêter la base de donnée MongoDB (dans le répertoire back-end)
+npm run stop-mongodb
 ```
 
 Votre serveur devrait maintenant fonctionner sur http://locahost:3001 et vous aurez désormais deux utilisateurs dans votre base de données MongoDB !
