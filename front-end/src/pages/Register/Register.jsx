@@ -89,7 +89,7 @@ function Register() {
                     </div>
 
                     <div className="input-wrapper">
-                        <label htmlFor="fistName">First Name</label>
+                        <label htmlFor="firstName">First Name</label>
                         <input className={error ? 'register__error-border' : ''} type="text" id="firstName" value={firstName} onChange={handleFirstNameChange} required />
                     </div>
 

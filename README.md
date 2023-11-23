@@ -111,11 +111,12 @@ mongo --version
 1. Ouvrez une fenêtre de terminal dans le projet cloné
 1. Exécutez les commandes suivantes :
 
-```terminal (dans le répertoire back-end et idem dans le répertoire front-end)
-# Installer les dépendances
+```terminal
+# Installer les dépendances (dans le répertoire back-end et idem dans le répertoire front-end)
 npm install
 
-# Démarrer la base de donnée MongoDB (dans le répertoire back-end)
+# J'ai ajouté deux commandes pour pouvoir lancé et arrêté la base de données plus facilement dans le package.json du back-end.
+# Démarrer la base de données MongoDB (dans le répertoire back-end)
 npm run mongodb
 
 # Démarrer le serveur de développement local (dans le répertoire back-end)
@@ -124,7 +125,7 @@ npm run dev:server
 # Remplir la base de données avec deux utilisateurs (dans le répertoire back-end)
 npm run populate-db
 
-# Arrêter la base de donnée MongoDB (dans le répertoire back-end)
+# Arrêter la base de données MongoDB (dans le répertoire back-end)
 npm run stop-mongodb
 ```
 
