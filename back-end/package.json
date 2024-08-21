@@ -17,7 +17,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^5.9.21",
     "swagger-ui-express": "^4.1.4",
-    "tar": "^7.4.3",
     "yamljs": "^0.3.0"
   },
   "scripts": {
