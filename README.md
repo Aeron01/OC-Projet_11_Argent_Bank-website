@@ -115,7 +115,9 @@ mongo --version
 # Installer les dépendances (dans le répertoire back-end et idem dans le répertoire front-end)
 npm install
 
-# J'ai ajouté deux commandes pour pouvoir lancé et arrêté la base de données plus facilement dans le package.json du back-end.
+# J'ai ajouté deux commandes pour pouvoir lancé et arrêté la base de données plus facilement dans
+le package.json du back-end.
+
 # Démarrer la base de données MongoDB (dans le répertoire back-end)
 npm run mongodb
 
